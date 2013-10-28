@@ -1,4 +1,25 @@
-You look great in Suspenders
+thoughtbot Podcasts
+============================
+
+Application for publishing our podcasts
+
+
+Deployment
+============================
+
+Staging
+-------
+
+http://thoughtbot-podcasts-staging.herokuapp.com/
+git@heroku.com:thoughtbot-podcasts-staging.git
+
+Production
+----------
+http://thoughtbot-podcasts-production.herokuapp.com/
+git@heroku.com:thoughtbot-podcasts-production.git
+
+
+Conventions
 ============================
 
 Use the following guides for getting things done, programming well, and
