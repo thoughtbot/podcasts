@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="ROBOTS" content="NOODP" />
-  <title><%= page_title %></title>
-  <%= stylesheet_link_tag :application, :media => 'all' %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="<%= body_class %>">
-  <%= render 'flashes' -%>
-  <%= yield %>
-  <%= render 'javascript' %>
-</body>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8" />
+    <title><%= page_title(app_name: t('layouts.app_name')) %></title>
+    <%= stylesheet_link_tag 'http://robots.thoughtbot.com/styles' %>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta http-equiv="Description" name="Description" content="<%= yield(:meta_description) %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Keywords" name="Keywords" content="<%= yield :meta_keywords %>" />
+    <%= yield :meta %>
+    <%= csrf_meta_tags %>
+    <script>
+      // Remove render-blocking JavaScripts
+      // https://developers.google.com/speed/docs/insights/BlockingJS
+      (function() {
+        function loadStylesheet(url) {
+          var stylesheet = document.createElement('link');
+          stylesheet.type = 'text/css';
+          stylesheet.rel = 'stylesheet';
+          stylesheet.href = url;
+          document.getElementsByTagName('head')[0].appendChild(stylesheet);
+        }
+
+        loadStylesheet('//cloud.typography.com/6716232/768182/css/fonts.css');
+        loadStylesheet('http://robots.thoughtbot.com/stylesheets/mobile.css');
+        loadStylesheet('http://robots.thoughtbot.com/stylesheets/desktop.css');
+      })();
+    </script>
+  </head>
+  <body class="<%= body_class %>">
+    <section id="container">
+      <header>
+        <%= yield(:header) %>
+      </header>
+
+      <%= yield %>
+    </section>
+
+    <footer>
+      <section id="footer-container">
+        <section class="etc">
+          <%= yield(:footer) %>
+        </section>
+      </section>
+    </footer>
+  </body>
 </html>

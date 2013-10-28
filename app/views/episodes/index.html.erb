@@ -1,0 +1,9 @@
+<% content_for :header do %>
+  <% render 'header', show: @show %>
+<% end %>
+
+<section id='posts'>
+  <%= render @show.episodes.published %>
+</section>
+
+<%= render 'credits', show: @show %>

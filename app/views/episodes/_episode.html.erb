@@ -1,0 +1,30 @@
+<article class='post text'>
+  <h1 class='title'>
+    <%= link_to episode.title, [episode.show, episode] %>
+  </h1>
+
+  <aside class='meta-info'>
+    <p>
+      <%= link_to [episode.show, episode] do %>
+        Episode #<%= episode.number %>
+      <% end %>
+    </p>
+    <p class='post-date'>
+      <%= episode.published_on.to_time.to_s(:short_date) %>
+    </p>
+    <p><%= distance_of_time_in_words episode.duration.to_f %></p>
+  </aside>
+
+  <p><%= episode.description %></p>
+
+  <!-- 
+    <ul class='tags'>
+      <li>
+        <a href="https://learn.thoughtbot.com/rails/articles">rails</a>
+      </li>
+      <li>
+        <a href="https://learn.thoughtbot.com/testing/articles">testing</a>
+      </li>
+    </ul>
+  -->
+</article>

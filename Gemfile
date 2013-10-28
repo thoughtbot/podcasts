@@ -19,6 +19,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'unicorn'
+gem 'ruby-mp3info', '~> 0.8'
+gem 'aws-sdk', '= 1.6.2' # Bug https://github.com/thoughtbot/paperclip/issues/751
+gem 'delayed_paperclip'
+gem 'paperclip'
+gem 'bluecloth'
 
 group :development do
   gem 'better_errors'

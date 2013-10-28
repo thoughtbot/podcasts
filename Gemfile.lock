@@ -31,11 +31,17 @@ GEM
       json
     arel (4.0.1)
     atomic (1.1.14)
+    aws-sdk (1.6.2)
+      httparty (~> 0.7)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bluecloth (2.2.0)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -49,6 +55,10 @@ GEM
     capybara-webkit (1.0.0)
       capybara (~> 2.0, >= 2.0.2)
       json
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.2)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -66,6 +76,8 @@ GEM
     delayed_job_active_record (4.0.0)
       activerecord (>= 3.0, < 4.1)
       delayed_job (>= 3.0, < 4.1)
+    delayed_paperclip (2.6.1)
+      paperclip (>= 3.3.0)
     diff-lcs (1.2.4)
     dotenv (0.9.0)
     email_validator (1.4.0)
@@ -83,6 +95,9 @@ GEM
       thor (>= 0.13.6)
     high_voltage (2.0.0)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.5)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -98,12 +113,18 @@ GEM
     mini_portile (0.5.1)
     minitest (4.7.5)
     multi_json (1.8.2)
+    multi_xml (0.5.5)
     neat (1.4.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
     newrelic_rpm (3.6.7.159)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    paperclip (3.5.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     pg (0.17.0)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -143,6 +164,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    ruby-mp3info (0.8)
     safe_yaml (0.9.7)
     sass (3.2.12)
     sass-rails (4.0.0)
@@ -181,6 +203,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
     webmock (1.13.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
@@ -192,13 +215,16 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake
+  aws-sdk (= 1.6.2)
   better_errors
   binding_of_caller
+  bluecloth
   bourbon
   capybara-webkit (>= 1.0.0)
   coffee-rails
   database_cleaner
   delayed_job_active_record (>= 4.0.0)
+  delayed_paperclip
   email_validator
   factory_girl_rails
   flutie
@@ -208,12 +234,14 @@ DEPENDENCIES
   launchy
   neat
   newrelic_rpm (>= 3.6.7)
+  paperclip
   pg
   rack-timeout
   rails (>= 4.0.0)
   rails_12factor
   recipient_interceptor
   rspec-rails (>= 2.14)
+  ruby-mp3info (~> 0.8)
   sass-rails
   shoulda-matchers
   simple_form
