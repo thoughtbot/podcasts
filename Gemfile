@@ -24,6 +24,8 @@ gem 'aws-sdk', '= 1.6.2' # Bug https://github.com/thoughtbot/paperclip/issues/75
 gem 'delayed_paperclip'
 gem 'paperclip'
 gem 'bluecloth'
+gem 'rails_admin'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'better_errors'
@@ -50,3 +52,6 @@ group :staging, :production do
   gem 'newrelic_rpm', '>= 3.6.7'
   gem 'rails_12factor'
 end
+
+
+gem "devise"

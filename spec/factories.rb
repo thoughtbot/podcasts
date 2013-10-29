@@ -3,6 +3,11 @@ FactoryGirl.define do
     "user#{n}@example.com"
   end
 
+  factory :user do
+    email
+    password 'password'
+  end
+
   factory :show do
     credits 'Some people'
     description 'Some people talking'

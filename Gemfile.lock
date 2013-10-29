@@ -36,12 +36,15 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
+    bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bluecloth (2.2.0)
+    bootstrap-sass (2.3.2.2)
+      sass (~> 3.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -78,6 +81,12 @@ GEM
       delayed_job (>= 3.0, < 4.1)
     delayed_paperclip (2.6.1)
       paperclip (>= 3.3.0)
+    devise (3.1.1)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.4)
     dotenv (0.9.0)
     email_validator (1.4.0)
@@ -89,20 +98,35 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     flutie (2.0.0)
+    font-awesome-rails (3.2.1.3)
+      railties (>= 3.2, < 5.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
+    haml (4.0.3)
+      tilt
+    hashie (2.0.5)
     high_voltage (2.0.0)
     hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
+    httpauth (0.2.0)
     i18n (0.6.5)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.1.0)
+      railties (>= 3.1.0)
     json (1.8.0)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.8.1)
     launchy (2.3.0)
       addressable (~> 2.3)
@@ -114,12 +138,30 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multi_xml (0.5.5)
+    multipart-post (1.2.0)
     neat (1.4.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
+    nested_form (0.3.2)
     newrelic_rpm (3.6.7.159)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-google-oauth2 (0.2.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.4.0)
     paperclip (3.5.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -128,6 +170,9 @@ GEM
     pg (0.17.0)
     polyglot (0.3.3)
     rack (1.5.2)
+    rack-pjax (0.7.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.3)
     rack-test (0.6.2)
       rack (>= 1.0)
     rack-timeout (0.0.4)
@@ -142,6 +187,21 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_admin (0.5.0)
+      bootstrap-sass (~> 2.3)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (~> 3.0)
+      haml (~> 4.0)
+      jquery-rails (~> 3.0)
+      jquery-ui-rails (~> 4.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 0.9)
+      sass-rails (~> 4.0)
     rails_serve_static_assets (0.0.1)
     rails_stdout_logging (0.0.3)
     railties (4.0.0)
@@ -153,6 +213,7 @@ GEM
     rake (10.1.0)
     recipient_interceptor (0.1.1)
       mail
+    remotipart (1.2.1)
     rspec-core (2.14.6)
     rspec-expectations (2.14.3)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -204,6 +265,8 @@ GEM
       rack
       raindrops (~> 0.7)
     uuidtools (2.1.4)
+    warden (1.2.3)
+      rack (>= 1.0)
     webmock (1.13.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
@@ -225,6 +288,7 @@ DEPENDENCIES
   database_cleaner
   delayed_job_active_record (>= 4.0.0)
   delayed_paperclip
+  devise
   email_validator
   factory_girl_rails
   flutie
@@ -234,11 +298,13 @@ DEPENDENCIES
   launchy
   neat
   newrelic_rpm (>= 3.6.7)
+  omniauth-google-oauth2
   paperclip
   pg
   rack-timeout
   rails (>= 4.0.0)
   rails_12factor
+  rails_admin
   recipient_interceptor
   rspec-rails (>= 2.14)
   ruby-mp3info (~> 0.8)

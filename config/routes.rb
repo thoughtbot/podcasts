@@ -1,4 +1,8 @@
 Podcasts::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   root to: 'episodes#index', show_id: 'giantrobots'
 
   constraints show_id: /giantrobots|buildphase/ do
