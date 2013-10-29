@@ -1,7 +1,7 @@
 <h2 class='logo'>
-  <a href='/'>
+  <%= link_to show_episodes_path(show) do %>
     <%= image_tag("#{show.slug}-small.png") %>
-  </a>
+  <% end %>
 </h2>
 
 <hgroup>
@@ -15,6 +15,6 @@
     <% if show.stitcher_url.present? %>
       <%= link_to 'Stitcher', show.stitcher_url %>
     <% end %>
-    <%#== @show.description %>
   </h3>
+  <p><%== show.description %></p>
 </hgroup>

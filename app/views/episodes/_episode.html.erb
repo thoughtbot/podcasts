@@ -4,7 +4,7 @@
   </h1>
 
   <aside class='meta-info'>
-    <p>
+    <p class='episode-number'>
       <%= link_to [episode.show, episode] do %>
         Episode #<%= episode.number %>
       <% end %>
@@ -16,15 +16,4 @@
   </aside>
 
   <p><%= episode.description %></p>
-
-  <!-- 
-    <ul class='tags'>
-      <li>
-        <a href="https://learn.thoughtbot.com/rails/articles">rails</a>
-      </li>
-      <li>
-        <a href="https://learn.thoughtbot.com/testing/articles">testing</a>
-      </li>
-    </ul>
-  -->
 </article>

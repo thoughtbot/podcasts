@@ -1,19 +1,39 @@
-@charset 'utf-8';
+.post .episode-number {
+  margin: 0;
 
-///////////////////////////////////////////////////////////////////////////////
+  a {
+    font-weight: 800;
 
-@import 'bourbon';
-@import 'neat';
+    &:visited {
+      color: #999;
+    }
+  }
+}
 
-///////////////////////////////////////////////////////////////////////////////
+.listen audio {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+}
 
-.listen {
-  margin: 30px 0;
+header hgroup {
+  h2 {
+    margin-bottom: .2rem;
+  }
 
-  audio {
-    display: block;
-    margin-bottom: 1em;
-    width: 100%;
+  h3 {
+    font-style: normal;
+    line-height: 1.6em;
+    margin-bottom: .5rem;
+
+    a {
+      border-bottom: 2px solid #999;
+      margin-right: .5rem;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
 

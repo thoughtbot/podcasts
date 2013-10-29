@@ -10,7 +10,7 @@
       <%= link_to @episode.title, [@episode.show, @episode] %>
     </h1>
     <aside class='meta-info'>
-      <p>
+      <p class='episode-number'>
         <%= link_to [@episode.show, @episode] do %>
           Episode #<%= @episode.number %>
         <% end %>
@@ -49,6 +49,6 @@
       </p>
     </section>
   </article>
-
-  <%= render 'credits', show: @episode.show %>
 </section>
+
+<%= render 'credits', show: @episode.show %>

@@ -45,9 +45,6 @@ GEM
     bluecloth (2.2.0)
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
-    bourbon (3.1.8)
-      sass (>= 3.2.0)
-      thor
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -139,9 +136,6 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
-    neat (1.4.0)
-      bourbon (>= 2.1)
-      sass (>= 3.2)
     nested_form (0.3.2)
     newrelic_rpm (3.6.7.159)
     nokogiri (1.6.0)
@@ -282,7 +276,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bluecloth
-  bourbon
   capybara-webkit (>= 1.0.0)
   coffee-rails
   database_cleaner
@@ -296,7 +289,6 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   launchy
-  neat
   newrelic_rpm (>= 3.6.7)
   omniauth-google-oauth2
   paperclip
