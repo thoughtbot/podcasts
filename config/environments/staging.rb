@@ -83,5 +83,6 @@ Podcasts::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { host: 'staging.podcasts.thoughtbot.com' }
+  HOST = 'staging.podcasts.thoughtbot.com'
+  config.action_mailer.default_url_options = { host: HOST }
 end

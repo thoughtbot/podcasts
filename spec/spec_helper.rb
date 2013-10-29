@@ -7,6 +7,7 @@ require File.expand_path('../../config/environment', __FILE__)
 
 require 'rspec/rails'
 require 'webmock/rspec'
+require 'paperclip/matchers'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
@@ -23,3 +24,5 @@ end
 
 Capybara.javascript_driver = :webkit
 WebMock.disable_net_connect!(allow_localhost: true)
+Paperclip.processor(:id3)
+Delayed::Worker.delay_jobs = false
