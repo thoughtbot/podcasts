@@ -16,8 +16,6 @@ describe Episode do
     it { should validate_presence_of :title }
   end
 
-  it_behaves_like 'it has related items'
-
   it 'assigns the next number for the show when created' do
     episode = build(:episode, number: nil)
 
