@@ -20,6 +20,7 @@ feature 'Viewing a podcast' do
 
     visit show_episodes_path(episode1.show)
 
+    expect(page).to have_title "thoughtbot : #{episode1.show.title}"
     expect(page).to have_content 'Good episode'
     expect(page).to have_content 'this was good'
     expect(page).to have_content '20 minutes'
@@ -41,6 +42,7 @@ feature 'Viewing a podcast' do
     visit show_episodes_path(episode.show)
     click_link 'Good episode'
 
+    expect(page).to have_title "thoughtbot : #{episode.show.title} : #{episode.full_title}"
     expect_to_see_episode_information(episode)
     expect_to_see_audio_player(episode)
   end
