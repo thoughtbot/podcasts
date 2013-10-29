@@ -18,14 +18,7 @@
       <p class='post-date'>
         <%= @episode.published_on.to_time.to_s(:short_date) %>
       </p>
-      <ul class='tags'>
-        <li>
-          <a href="https://learn.thoughtbot.com/rails/articles">rails</a>
-        </li>
-        <li>
-          <a href="https://learn.thoughtbot.com/testing/articles">testing</a>
-        </li>
-      </ul>
+      <%= render 'tags', episode: @episode %>
     </aside>
 
     <p><%= @episode.description %></p>

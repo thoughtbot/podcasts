@@ -10,6 +10,7 @@ describe Episode do
     it { should validate_presence_of :published_on }
     it { should validate_presence_of :show }
     it { should validate_presence_of :title }
+    it { should validate_presence_of :tags }
   end
 
   it 'assigns the next number for the show when created' do
@@ -75,7 +76,6 @@ describe Episode do
     end
   end
 
-
   describe '.increment_downloads' do
     it 'increments the download count by 1' do
       episode = create(:episode, downloads_count: 4)
@@ -126,5 +126,13 @@ describe Episode do
 
     expect(attachment).to have_received(:save).at_least(6).times
     expect(attachment).to have_received(:assign).at_least(6).times
+  end
+
+  describe '#tag_array' do
+    it 'returns the comma seperated tags split into an array' do
+      episode = create(:episode, tags: 'rails, testing')
+
+      expect(episode.tag_array).to eq %w(rails testing)
+    end
   end
 end
