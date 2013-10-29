@@ -84,6 +84,10 @@ Podcasts::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.cache_store = :dalli_store
+  config.middleware.use Rack::Cache,
+    verbose: true,
+    metastore: "memcached://#{ENV['MEMCACHIER_SERVERS']}",
+    entitystore: "memcached://#{ENV['MEMCACHIER_SERVERS']}"
 
   HOST = 'staging.podcasts.thoughtbot.com'
   config.action_mailer.default_url_options = { host: HOST }
