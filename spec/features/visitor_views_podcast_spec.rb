@@ -45,39 +45,11 @@ feature 'Viewing a podcast' do
     expect_to_see_audio_player(episode)
   end
 
-  scenario 'Visitor views a podcast episode with related content' do
-    ruby = create(:topic, name: 'Ruby')
-    asp = create(:topic, name: 'ASP.net')
-    episode = create(:episode, title: 'Good episode')
-    book = create(:book_product, name: 'Awesome product')
-    video = create(:video_product, name: 'Awesome video')
-    inactive_video = create(:video_product, name: 'Bad product', active: false)
-    workshop = create(:workshop, name: 'Awesome workshop')
-    inactive_workshop = create(:workshop, name: 'Bad workshop', active: false)
-    ruby.episodes << episode
-    ruby.products << book
-    asp.products << video
-    ruby.products << inactive_video
-    ruby.workshops << workshop
-    ruby.workshops << inactive_workshop
-
-    visit show_episodes_path(episode.show)
-    click_link 'Good episode'
-
-    expect(page).to have_content('Awesome product')
-    within('aside') do
-      expect(page).to have_content('Ruby')
-      expect(page).to have_content('Awesome product')
-      expect(page).to have_content('Awesome workshop')
-      expect(page).not_to have_content('ASP.net')
-      expect(page).not_to have_content('Bad product')
-      expect(page).not_to have_content('Bad workshop')
-    end
-  end
-
   def expect_to_see_episode_information(episode)
-    expect(page).to have_css('h2', text: episode.title)
-    expect(page).to have_css('h3', text: "Episode ##{episode.number}")
+    expect(page).to have_css('h1 a', text: episode.title)
+    within 'aside' do
+      expect(page).to have_content("Episode ##{episode.number}")
+    end
     expect(page).to have_css('.listen', text: /13 MB,/)
     expect(page).to have_css('.listen', text: /20 minutes/)
   end

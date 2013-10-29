@@ -3,10 +3,6 @@ require 'spec_helper'
 describe Episode do
   context 'associations' do
     it { should belong_to(:show) }
-    it { should have_many(:classifications) }
-    it { should have_many(:products).through(:topics) }
-    it { should have_many(:topics).through(:classifications) }
-    it { should have_many(:workshops).through(:topics) }
   end
 
   context 'validations' do
@@ -47,21 +43,24 @@ describe Episode do
     it "does not include episodes published in the future" do
       published = create(:episode, published_on: 1.day.ago)
       future = create(:episode, published_on: 1.day.from_now)
-      Episode.published.should include published
-      Episode.published.should_not include future
+
+      expect(Episode.published).to include published
+      expect(Episode.published).not_to include future
     end
 
     it "orders by most recently published" do
       create(:episode, published_on: 7.days.ago)
       first = create(:episode, published_on: 2.days.ago)
-      Episode.published.first.should == first
+
+      expect(Episode.published.first).to eq first
     end
   end
 
   describe ".full_title" do
     it 'includes the episode number and title' do
       episode = create(:episode, title: 'Hello')
-      episode.full_title.should == "Episode #{episode.number}: #{episode.title}"
+
+      expect(episode.full_title).to eq "Episode #{episode.number}: #{episode.title}"
     end
   end
 
@@ -70,30 +69,19 @@ describe Episode do
       Timecop.freeze(Time.zone.today) do
         expected_date = 1.days.ago.to_date
         episode = create(:episode, published_on: expected_date)
-        episode.rss_pub_date.should == expected_date.strftime('%a, %d %b %Y %H:%M:%S %z')
+
+        expect(episode.rss_pub_date).to eq expected_date.strftime('%a, %d %b %Y %H:%M:%S %z')
       end
     end
   end
 
-  describe ".products" do
-    it 'should not duplicate products' do
-      episode = create(:episode)
-      product = create(:product)
-      topic_one = create(:topic)
-      topic_one.products << product
-      topic_two = create(:topic)
-      topic_two.products << product
-      episode.topics << topic_one
-      episode.topics << topic_two
-      episode.products.should == [product]
-    end
-  end
 
   describe '.increment_downloads' do
     it 'increments the download count by 1' do
       episode = create(:episode, downloads_count: 4)
       episode.increment_downloads
-      episode.downloads_count.should eq 5
+
+      expect(episode.downloads_count).to eq 5
     end
   end
 
@@ -107,37 +95,21 @@ describe Episode do
     end
   end
 
-  describe '.promote_published_today' do
-    it 'only includes episodes published_on today' do
-      today = create(:episode, published_on: Time.zone.today)
-      tomorrow = create(:episode, published_on: 1.day.from_now)
-      last_week = create(:episode, published_on: 1.week.ago)
-      client = stub(post_episode: nil)
-      TumblrClient.stubs(:new).returns(client)
-
-      Episode.promote_published_today
-
-      expect(client).to have_received(:post_episode).with(today)
-      expect(client).to have_received(:post_episode).with(tomorrow).never
-      expect(client).to have_received(:post_episode).with(last_week).never
-    end
-  end
-
   it 'queues up a fetch from url if one is supplied' do
     mp3_url = 'http://example.com/test.mp3'
     episode = build(:episode, new_mp3_url: mp3_url)
-    EpisodeMp3FetchJob.stubs(:enqueue)
+    EpisodeMp3FetchJob.stub(:enqueue)
 
     episode.save!
 
-    EpisodeMp3FetchJob.should have_received(:enqueue).
+    expect(EpisodeMp3FetchJob).to have_received(:enqueue).
       with(episode.id, mp3_url)
   end
 
   it 'reprocesses the mp3 file if certain attributes change' do
-    attachment = stub(save: nil, assign: nil)
+    attachment = double(save: nil, assign: nil, flush_errors: nil)
     episode = create(:episode)
-    episode.stubs(mp3: attachment)
+    episode.stub(mp3: attachment)
 
     episode.show = create(:show)
     episode.save!
@@ -151,7 +123,8 @@ describe Episode do
       episode[attribute] = 'test'
       episode.save!
     end
-    expect(attachment).to have_received(:save).times(6)
-    expect(attachment).to have_received(:assign).times(6)
+
+    expect(attachment).to have_received(:save).at_least(6).times
+    expect(attachment).to have_received(:assign).at_least(6).times
   end
 end

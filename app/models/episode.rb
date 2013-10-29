@@ -34,13 +34,6 @@ class Episode < ActiveRecord::Base
     published.where(published_on: Time.zone.today)
   end
 
-  def self.promote_published_today
-    tumblr_client = TumblrClient.new
-    published_today.each do |episode|
-      tumblr_client.post_episode(episode)
-    end
-  end
-
   def full_title
     "Episode #{number}: #{title}"
   end
