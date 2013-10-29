@@ -10,10 +10,10 @@
   </h2>
   <h3>
     <%= link_to 'All Episodes', show_episodes_path(show) %>
-    <%= link_to 'iTunes', show.itunes_url %>
-    <%= link_to 'RSS', show_episodes_path(show, format: :xml) %>
+    <%= link_to 'iTunes', show.itunes_url, target: '_blank' %>
+    <%= link_to 'RSS', show_episodes_path(show, format: :xml), target: '_blank' %>
     <% if show.stitcher_url.present? %>
-      <%= link_to 'Stitcher', show.stitcher_url %>
+      <%= link_to 'Stitcher', show.stitcher_url, target: '_blank' %>
     <% end %>
   </h3>
   <p><%== show.description %></p>
