@@ -24,6 +24,7 @@ gem 'paperclip'
 gem 'bluecloth'
 gem 'rails_admin'
 gem 'omniauth-google-oauth2'
+gem 'devise'
 
 group :development do
   gem 'better_errors'
@@ -49,7 +50,8 @@ end
 group :staging, :production do
   gem 'newrelic_rpm', '>= 3.6.7'
   gem 'rails_12factor'
+  gem 'memcachier'
+  gem 'rack-cache'
+  gem 'dalli'
+  gem 'kgio'
 end
-
-
-gem "devise"
