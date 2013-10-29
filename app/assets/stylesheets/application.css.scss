@@ -16,3 +16,13 @@
     width: 100%;
   }
 }
+
+body.devise-sessions {
+  form {
+    display: none;
+  }
+
+  h2 {
+    display: none;
+  }
+}
