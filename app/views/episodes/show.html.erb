@@ -1,7 +1,7 @@
 <% content_for :page_title, "#{@episode.show.title} : #{@episode.full_title}" %>
 
 <% content_for :header do %>
-  <%= render 'header', show: @episode.show %>
+  <%= render @episode.show %>
 <% end %>
 
 <section id='posts'>

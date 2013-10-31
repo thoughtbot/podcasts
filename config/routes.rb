@@ -3,10 +3,12 @@ Podcasts::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  root to: 'episodes#index', show_id: 'giantrobots'
+  root to: 'shows#index'
 
   constraints show_id: /giantrobots|buildphase/ do
     get '/:show_id' => 'episodes#index', as: :show_episodes
     get '/:show_id/:id' => 'episodes#show', as: :show_episode
   end
+
+  resources :shows, only: [:index]
 end
