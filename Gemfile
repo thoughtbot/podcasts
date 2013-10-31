@@ -25,6 +25,7 @@ gem 'bluecloth'
 gem 'rails_admin'
 gem 'omniauth-google-oauth2'
 gem 'devise'
+gem 'octokit'
 
 group :development do
   gem 'better_errors'
