@@ -61,7 +61,7 @@ describe Episode do
     it 'includes the episode number and title' do
       episode = create(:episode, title: 'Hello')
 
-      expect(episode.full_title).to eq "Episode #{episode.number}: #{episode.title}"
+      expect(episode.full_title).to eq "#{episode.number}: #{episode.title}"
     end
   end
 

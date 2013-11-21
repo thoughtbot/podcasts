@@ -36,7 +36,7 @@ class Episode < ActiveRecord::Base
   end
 
   def full_title
-    "Episode #{number}: #{title}"
+    "#{number}: #{title}"
   end
 
   def rss_pub_date
