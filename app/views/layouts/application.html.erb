@@ -2,8 +2,7 @@
 <html lang="en">
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8" />
-    <meta http-equiv="Description" name="Description" content="<%= yield(:meta_description) %>" />
-    <meta http-equiv="Keywords" name="Keywords" content="<%= yield :meta_keywords %>" />
+    <meta http-equiv="Description" name="Description" content="<%= yield(:meta_description) || "Weekly podcasts from thoughtbot on design, Ruby on Rails, iOS, and the programmer lifestyle." %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= yield :meta %>
