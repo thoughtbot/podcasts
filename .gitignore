@@ -6,7 +6,6 @@
 .env
 .foreman
 .sass-cache/
-bin/stubs
 coverage/*
 db/*.sqlite3
 log/*
