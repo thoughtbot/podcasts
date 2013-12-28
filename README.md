@@ -1,26 +1,49 @@
 thoughtbot Podcasts
-============================
+===================
 
-Application for publishing our podcasts
+Application for publishing our podcasts.
 
+Setup
+-----
 
-Deployment
-============================
+```
+git clone git@github.com:thoughtbot/podcasts.git
+cd podcasts
+./bin/setup
+```
 
-Staging
--------
+Deploy
+------
 
-http://thoughtbot-podcasts-staging.herokuapp.com/
-git@heroku.com:thoughtbot-podcasts-staging.git
+Staging and production remotes are available on Heroku. Add yourself to the
+projects [`thoughtbot-podcasts-staging`] and [`thoughtbot-podcasts-production`].
 
-Production
-----------
-http://thoughtbot-podcasts-production.herokuapp.com/
-git@heroku.com:thoughtbot-podcasts-production.git
+[`thoughtbot-podcasts-staging`]: https://dashboard.heroku.com/orgs/thoughtbot/apps/thoughtbot-podcasts-staging/resources
+[`thoughtbot-podcasts-production`]: https://dashboard.heroku.com/orgs/thoughtbot/apps/thoughtbot-podcasts-production/resources
 
+`bin/setup` will automatically set up `staging` and `production` remotes that
+point to those Heroku apps.
+
+### Staging
+
+Deploy to staging:
+
+```
+git push staging master
+open http://staging.podcasts.thoughtbot.com
+```
+
+### Production
+
+Deploy to production
+
+```
+git push production master
+open http://podcasts.thoughtbot.com
+```
 
 Conventions
-============================
+===========
 
 Use the following guides for getting things done, programming well, and
 programming in style.
