@@ -9,7 +9,6 @@ class Episode < ActiveRecord::Base
   validates :published_on, presence: true
   validates :show, presence: true
   validates :title, presence: true
-  validates :tags, presence: true
 
   before_validation :assign_next_number, on: :create
   after_save :enqueue_remote_fetch
@@ -49,10 +48,6 @@ class Episode < ActiveRecord::Base
 
   def to_param
     number
-  end
-
-  def tag_array
-    tags.split(',').map(&:strip)
   end
 
   private

@@ -24,7 +24,6 @@ FactoryGirl.define do
     title 'Episode Title'
     description 'A really great episode'
     published_on { 1.day.ago }
-    tags 'topic'
 
     factory :future_episode do
       published_on { 1.day.from_now }

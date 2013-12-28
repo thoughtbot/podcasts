@@ -18,7 +18,6 @@
       <p class='post-date'>
         <%= @episode.published_on.to_time.to_s(:short_date) %>
       </p>
-      <%= render 'tags', episode: @episode %>
     </aside>
 
     <p><%= @episode.description %></p>
