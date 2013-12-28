@@ -9,9 +9,9 @@ FactoryGirl.define do
   end
 
   factory :show do
+    email
     credits 'Some people'
     description 'Some people talking'
-    email
     itunes_url 'http://itunes.com'
     keywords 'design, development'
     short_description 'Weekly podcast of some people talking'
@@ -21,9 +21,9 @@ FactoryGirl.define do
 
   factory :episode do
     show
-    title 'Episode Title'
     description 'A really great episode'
     published_on { 1.day.ago }
+    title 'Episode Title'
 
     factory :future_episode do
       published_on { 1.day.from_now }

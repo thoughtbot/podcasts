@@ -5,7 +5,7 @@ feature 'Viewing a podcast' do
     episode1 = create(
       :episode,
       title: 'Good episode',
-      description: 'this was good', 
+      description: 'this was good',
       duration: 1210
     )
     create(
@@ -34,7 +34,7 @@ feature 'Viewing a podcast' do
     episode = create(
       :episode,
       title: 'Good episode',
-      description: 'this was good', 
+      description: 'this was good',
       file_size: 13540249,
       duration: 1210
     )
@@ -49,10 +49,12 @@ feature 'Viewing a podcast' do
 
   def expect_to_see_episode_information(episode)
     expect(page).to have_css('h1 a', text: episode.title)
+
     within 'aside' do
       expect(page).to have_content("Episode ##{episode.number}")
     end
-    expect(page).to have_css('.listen', text: /13 MB,/)
+
+    expect(page).to have_css('.listen', text: %r{13 MB,})
     expect(page).to have_css('.listen', text: /20 minutes/)
   end
 
