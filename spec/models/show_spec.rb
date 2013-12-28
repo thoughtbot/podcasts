@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Show do
   it { should have_many(:episodes) }
 
-  it { should validate_presence_of(:credits) }
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:itunes_url) }
