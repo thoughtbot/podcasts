@@ -3,6 +3,8 @@
 *.swo
 *.swp
 .bundle
+.env
+.foreman
 .sass-cache/
 bin/stubs
 coverage/*
@@ -13,4 +15,3 @@ rerun.txt
 tags
 tmp/*
 tmp/**/*
-.env

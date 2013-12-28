@@ -15,12 +15,12 @@ if [ ! -f .env ]; then
 fi
 
 # Pick a port for Foreman
-echo "port: 7000" > .foreman
+echo "port: 7070" > .foreman
 
 # Set up DNS via Pow
 if [ -d ~/.pow ]
 then
-  echo 7000 > ~/.pow/`basename $PWD`
+  echo 7070 > ~/.pow/`basename $PWD`
 else
   echo "Pow not set up but the team uses it for this project. Setup: http://goo.gl/RaDPO"
 fi
