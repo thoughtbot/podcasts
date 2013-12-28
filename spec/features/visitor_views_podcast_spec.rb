@@ -36,8 +36,7 @@ feature 'Viewing a podcast' do
       title: 'Good episode',
       description: 'this was good', 
       file_size: 13540249,
-      duration: 1210,
-      tags: 'rails,testing'
+      duration: 1210
     )
 
     visit show_episodes_path(episode.show)
@@ -55,11 +54,6 @@ feature 'Viewing a podcast' do
     end
     expect(page).to have_css('.listen', text: /13 MB,/)
     expect(page).to have_css('.listen', text: /20 minutes/)
-    within 'aside .tags' do
-      episode.tag_array.each do |tag|
-        expect(page).to have_content tag
-      end
-    end
   end
 
   def expect_to_see_audio_player(episode)
