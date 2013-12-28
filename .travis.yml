@@ -1,0 +1,6 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.0.0
+before_install:
+- echo '--colour' > ~/.rspec
