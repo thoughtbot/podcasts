@@ -237,6 +237,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    spring (1.0.0)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -312,6 +313,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   simplecov
+  spring
   timecop
   uglifier
   unicorn
