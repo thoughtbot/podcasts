@@ -4,10 +4,15 @@ en:
       default: '%m/%d/%Y'
       with_weekday: '%a %m/%d/%y'
 
+  layouts:
+    app_name:
+      'thoughtbot podcasts'
+    description:
+      'Weekly podcasts from thoughtbot on design, Ruby on Rails, iOS, running
+      software companies, and maintaining work/life balance.'
+
   time:
     formats:
       default: '%a, %b %-d, %Y at %r'
       date: '%b %-d, %Y'
       short: '%B %d'
-  layouts:
-    app_name: thoughtbot
