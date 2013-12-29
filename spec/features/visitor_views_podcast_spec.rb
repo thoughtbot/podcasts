@@ -21,9 +21,9 @@ feature 'Viewing a podcast' do
     visit show_episodes_path(episode1.show)
 
     expect(page).to have_title "thoughtbot : #{episode1.show.title}"
+    expect(page).to have_content "Episode ##{episode1.number}"
     expect(page).to have_content 'Good episode'
     expect(page).to have_content 'this was good'
-    expect(page).to have_content '20 minutes'
     expect(page).to have_content 'Not so good'
     expect(page).to have_content 'this was bad'
     expect(page).not_to have_content 'Future episode'
@@ -52,10 +52,10 @@ feature 'Viewing a podcast' do
 
     within 'aside' do
       expect(page).to have_content("Episode ##{episode.number}")
+      expect(page).to have_content('20 minutes')
     end
 
-    expect(page).to have_css('.listen', text: %r{13 MB,})
-    expect(page).to have_css('.listen', text: /20 minutes/)
+    expect(page).to have_css('.listen', text: /13 MB/)
   end
 
   def expect_to_see_audio_player(episode)

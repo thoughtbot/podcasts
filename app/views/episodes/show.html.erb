@@ -17,7 +17,10 @@
         <% end %>
       </p>
       <p class='post-date'>
-        <%= @episode.published_on.to_time.to_s(:short_date) %>
+        <%= l @episode.published_on %>
+      </p>
+      <p>
+        <%= distance_of_time_in_words @episode.duration.to_f %>
       </p>
     </aside>
 
@@ -32,8 +35,7 @@
       <%= link_to show_episode_path(@episode.show, @episode, format: :mp3) do %>
         Direct Download
       <% end %>
-      (<%= number_to_human_size @episode.file_size, precision: 2 %>,
-      <%= distance_of_time_in_words @episode.duration.to_f %>)
+      (<%= number_to_human_size @episode.file_size, precision: 2 %>)
     </div>
 
     <% unless @episode.notes.blank? %>

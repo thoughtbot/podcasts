@@ -1,18 +1,17 @@
-<article class='post text'>
+<article class='post text tag-post'>
   <h1 class='title'>
     <%= link_to episode.title, [episode.show, episode] %>
   </h1>
 
-  <aside class='meta-info'>
+  <aside class='meta-info tag-result'>
     <p class='episode-number'>
       <%= link_to [episode.show, episode] do %>
         Episode #<%= episode.number %>
       <% end %>
     </p>
     <p class='post-date'>
-      <%= episode.published_on.to_time.to_s(:short_date) %>
+      <%= l episode.published_on %>
     </p>
-    <p><%= distance_of_time_in_words episode.duration.to_f %></p>
   </aside>
 
   <p><%= episode.description %></p>
