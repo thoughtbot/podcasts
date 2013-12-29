@@ -10,7 +10,6 @@ FactoryGirl.define do
 
   factory :show do
     email
-    credits 'Some people'
     description 'Some people talking'
     itunes_url 'http://itunes.com'
     keywords 'design, development'

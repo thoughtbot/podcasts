@@ -1,7 +1,6 @@
 class Show < ActiveRecord::Base
   has_many :episodes
 
-  validates :credits, presence: true
   validates :description, presence: true
   validates :email, presence: true
   validates :itunes_url, presence: true
