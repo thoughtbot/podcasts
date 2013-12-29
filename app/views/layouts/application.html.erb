@@ -2,18 +2,18 @@
 <html lang="en">
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8" />
-    <meta http-equiv="description" name="description" content="<%= yield(:meta_description) || "Weekly podcasts from thoughtbot on design, Ruby on Rails, iOS, and the programmer lifestyle." %>" />
+    <meta name="description" content="<%= yield(:meta_description).presence || t('layouts.description') %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= yield :meta %>
-    <title><%= page_title(app_name: t('layouts.app_name')) %></title>
+    <title><%= yield(:page_title).presence || t('layouts.app_name') %></title>
     <%= stylesheet_link_tag '//cloud.typography.com/6716232/768182/css/fonts.css' %>
     <%= stylesheet_link_tag 'http://robots.thoughtbot.com/stylesheets/mobile.css' %>
     <%= stylesheet_link_tag 'http://robots.thoughtbot.com/stylesheets/desktop.css' %>
     <%= stylesheet_link_tag 'application' %>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
-  <body class="<%= body_class %>">
+  <body>
     <section id="container">
       <%= yield(:header) %>
       <%= yield %>
