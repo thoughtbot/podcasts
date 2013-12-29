@@ -15,14 +15,8 @@ cd podcasts
 Deploy
 ------
 
-Staging and production remotes are available on Heroku. Add yourself to the
-projects [`thoughtbot-podcasts-staging`] and [`thoughtbot-podcasts-production`].
-
-[`thoughtbot-podcasts-staging`]: https://dashboard.heroku.com/orgs/thoughtbot/apps/thoughtbot-podcasts-staging/resources
-[`thoughtbot-podcasts-production`]: https://dashboard.heroku.com/orgs/thoughtbot/apps/thoughtbot-podcasts-production/resources
-
-`bin/setup` will automatically set up `staging` and `production` remotes that
-point to those Heroku apps.
+`./bin/setup` will automatically add you as a collaborator, and set up `staging`
+and `production` remotes, to the Heroku apps.
 
 ### Staging
 
