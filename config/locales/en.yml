@@ -1,7 +1,7 @@
 en:
   date:
     formats:
-      default: '%m/%d/%Y'
+      default: '%-d %B %Y'
       with_weekday: '%a %m/%d/%y'
 
   time:
@@ -9,5 +9,6 @@ en:
       default: '%a, %b %-d, %Y at %r'
       date: '%b %-d, %Y'
       short: '%B %d'
+
   layouts:
     app_name: thoughtbot
