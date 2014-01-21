@@ -6,7 +6,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
-    @episode = current_show.episodes.published.find_by_number!(params[:id].to_i)
+    @episode = current_show.episodes.find_by_number!(params[:id].to_i)
     respond_to do |format|
       format.html
       format.mp3 do

@@ -28,6 +28,16 @@ describe EpisodesController do
     end
   end
 
+  describe '#show a non-published episode' do
+    it 'responds with the episode' do
+      episode = create(:episode, published_on: 7.days.from_now)
+
+      get :show, show_id: episode.show, id: episode
+
+      expect(response).to be_success
+    end
+  end
+
   describe '#show as mp3' do
     it 'increments the download counter and 302 redirects to the mp3' do
       episode = create(:episode, mp3: episode_mp3_fixture)
