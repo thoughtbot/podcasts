@@ -46,3 +46,13 @@ body.devise-sessions {
     display: none;
   }
 }
+
+body.guest-info {
+  .title {
+    margin-top: 2em;
+  }
+
+  .post {
+    padding-left: 0;
+  }
+}
