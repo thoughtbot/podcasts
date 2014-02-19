@@ -182,9 +182,6 @@ RailsAdmin.config do |config|
           help 'Format with Markdown'
         end
         field :published_on
-        field :tags do
-          help 'Comma separated list'
-        end
         field :downloads_count do
           read_only true
         end
