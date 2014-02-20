@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 
 gem 'airbrake'
-gem 'aws-sdk', '= 1.6.2' # Bug https://github.com/thoughtbot/paperclip/issues/751
+gem 'aws-sdk', '1.6.2' # Bug https://github.com/thoughtbot/paperclip/issues/751
 gem 'bluecloth'
 gem 'coffee-rails'
 gem 'delayed_job_active_record', '>= 4.0.0'
@@ -16,7 +16,7 @@ gem 'omniauth-google-oauth2'
 gem 'paperclip'
 gem 'pg'
 gem 'rack-timeout'
-gem 'rails', '>= 4.0.0'
+gem 'rails', '4.0.3'
 gem 'rails_admin'
 gem 'recipient_interceptor'
 gem 'ruby-mp3info', '~> 0.8'
