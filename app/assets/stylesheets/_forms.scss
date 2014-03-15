@@ -1,0 +1,27 @@
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea {
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding: .7rem .8rem;
+}
+
+input[type="email"] {
+  border: 1px solid rgb(200, 200, 200);
+  box-shadow: inset 0 2px 3px rgb(240, 240, 240);
+  font-family: $serif;
+}
+
+input[type="submit"] {
+  background: $red;
+  border: 1px solid $red;
+  color: #fff;
+  font-family: $sans-serif;
+  font-weight: 600;
+
+  &:hover {
+    background: darken($red, 10%);
+  }
+}

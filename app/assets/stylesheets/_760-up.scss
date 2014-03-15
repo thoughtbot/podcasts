@@ -1,0 +1,156 @@
+section#container {
+  width: grid-width(9);
+}
+
+header {
+  margin: 6rem 0;
+
+  h2.logo {
+    float: left;
+    text-align: left;
+    width: grid-width(2);
+
+    a {
+      margin: 15px 0 0 30px;
+      display: block;
+    }
+  }
+
+  hgroup {
+    float: left;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+    width: 770px;
+  }
+}
+
+.post {
+  margin: 0;
+  padding: 0 0 6rem grid-width(2) + $gw-gutter;
+  position: relative;
+
+  &.mini-post {
+    padding-bottom: 3rem;
+  }
+
+  &:only-of-type {
+    border-bottom: 0;
+  }
+
+  h1.title {
+    text-align: left;
+    margin-bottom: 1.7rem;
+  }
+
+  img {
+    display: inline-block;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+.email-container {
+  margin: 0;
+  padding: 0 0 5rem grid-width(2) + $gw-gutter;
+  text-align: left;
+
+  input {
+    width: auto;
+  }
+
+  input[type=email] {
+    margin-bottom: 0;
+  }
+}
+
+.meta-info {
+  font-family: $subhead;
+  left: 0px;
+  position: absolute;
+  text-align: left;
+  width: grid-width(2) + 10px;
+  z-index: 2;
+
+  &.mini {
+    top: 0;
+  }
+
+  .post-date {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .author:before {
+    content: 'by';
+    display: inline;
+    font-style: italic;
+    padding-right: .5rem;
+    @include position(absolute, 0 0 0 -1.5rem);
+  }
+
+  .tagged {
+    display: block;
+  }
+
+  .tags {
+    display: block;
+
+    li {
+      margin: 0;
+      position: relative;
+    }
+
+    li:after {
+      content: "\2014";
+      font-weight: 100;
+      left: -1.5rem;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .comments {
+    display: block;
+  }
+}
+
+#pagination {
+  @include clearfix;
+  float: right;
+  padding-left: grid-width(2) + $gw-gutter;
+  width: 100%;
+}
+
+#older-link a {
+  background-position: 0 13px;
+  width: grid-width(2);
+}
+
+#newer-link a {
+  background-position: right -15px;
+  width: grid-width(2);
+}
+
+footer {
+  margin: auto;
+  overflow: auto;
+  padding-left: 1.58em;
+  padding-right: 1.5rem;
+  width: grid-width(9);
+}
+
+#footer-container {
+  box-sizing: border-box;
+  margin: 0 1.5rem;
+  padding: 0 0 0 grid-width(2) + $gw-gutter;
+  width: 100%;
+
+  img.scene {
+    max-width: 30%;
+  }
+}

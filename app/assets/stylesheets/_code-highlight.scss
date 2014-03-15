@@ -1,0 +1,143 @@
+// modifications
+code {
+  background: #f7f7f7;
+  font-family: $monospace;
+  font-size: .95rem;
+  margin: 0 .3rem;
+  outline: 1px solid #ccc;
+  padding: 0 3px;
+  white-space: nowrap;
+}
+
+pre {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  line-height: 1.35em;
+  margin: 1.7rem 0;
+  overflow-x: scroll;
+  padding: .5rem 1rem;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+pre code {
+  background: none;
+  color: #333;
+  display: block;
+  font-size: .8rem;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  white-space: inherit;
+}
+
+h1, h2, h3, h4 {
+  code {
+    background: none;
+    font-weight: 400;
+    outline: 0;
+  }
+}
+
+pre .subst,
+pre .title {
+  font-weight: normal;
+  color: #333;
+}
+
+pre .comment,
+pre .template_comment,
+pre .javadoc,
+pre .diff .header {
+  color: #808080;
+  font-style: italic;
+}
+
+pre .annotation,
+pre .decorator,
+pre .preprocessor,
+pre .doctype,
+pre .pi,
+pre .chunk,
+pre .shebang,
+pre .apache .cbracket,
+pre .input_number {
+  color: #808000;
+}
+
+pre .tag,
+pre .pi {
+  background: #efefef;
+}
+
+pre .tag .title,
+pre .id,
+pre .attr_selector,
+pre .pseudo,
+pre .literal,
+pre .keyword,
+pre .hexcolor,
+pre .css .function,
+pre .ini .title,
+pre .css .class,
+pre .list .title,
+pre .tex .command {
+  color: #000080;
+}
+
+pre .attribute,
+pre .rules .keyword,
+pre .number,
+pre .date,
+pre .regexp,
+pre .tex .special {
+  color: #0000ff;
+}
+
+pre .number,
+pre .regexp {
+  font-weight: normal;
+}
+
+pre .string,
+pre .value,
+pre .filter .argument,
+pre .css .function .params,
+pre .apache .tag {
+  color: #008000;
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .char,
+pre .tex .formula {
+  color: #dc322f;
+}
+
+pre .phpdoc,
+pre .yardoctag,
+pre .javadoctag {
+  text-decoration: underline;
+}
+
+pre .variable,
+pre .envvar,
+pre .apache .sqbracket,
+pre .nginx .built_in {
+  color: #cb4b16;
+}
+
+pre .addition {
+  background: #baeeba;
+}
+
+pre .deletion {
+  background: #ffc8bd;
+}
+
+pre .diff .change {
+  background: #bccff9;
+}
