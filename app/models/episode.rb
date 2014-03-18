@@ -21,6 +21,7 @@ class Episode < ActiveRecord::Base
     },
     processors: [:id3]
   }.merge(PAPERCLIP_STORAGE_OPTIONS)
+  validates_attachment_content_type :mp3, :content_type => /mpeg/
 
   process_in_background :mp3
 
