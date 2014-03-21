@@ -26,6 +26,15 @@ describe EpisodesController do
       get :index, show_id: episode.show.to_param, format: :xml
       expect(response).to render_template("index")
     end
+
+    it 'allows cross origin resources' do
+      episode = create(:episode)
+
+      get :index, show_id: episode.show.to_param, format: :xml
+
+      expect(response.headers['Access-Control-Allow-Origin']).to eq '*'
+      expect(response.headers['Access-Control-Request-Method']).to eq '*'
+    end
   end
 
   describe '#show a non-published episode' do

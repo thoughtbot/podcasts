@@ -3,6 +3,7 @@ class EpisodesController < ApplicationController
     expires_in 1.hour, public: true
     @show = current_show
     fresh_when(@show.episodes.published.first, public: true)
+    set_access_control_headers
   end
 
   def show
@@ -20,5 +21,10 @@ class EpisodesController < ApplicationController
 
   def current_show
     Show.find_by_slug!(params[:show_id])
+  end
+
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Request-Method'] = '*'
   end
 end
