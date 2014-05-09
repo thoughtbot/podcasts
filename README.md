@@ -60,5 +60,5 @@ The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 License
 -------
 
-This application is Copyright © 2008-2014 thoughtbot, inc. It is free software,
+This application is Copyright © 2014 thoughtbot, inc. It is free software,
 and may be redistributed under the terms specified in the MIT-LICENSE file.
