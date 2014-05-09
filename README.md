@@ -45,3 +45,20 @@ programming in style.
 * [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
 * [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
 * [Style](http://github.com/thoughtbot/guides/blob/master/style)
+
+Credits
+-------
+
+![thoughtbot](http://thoughtbot.com/logo.png)
+
+This application is maintained and funded by [thoughtbot, inc](http://thoughtbot.com)
+
+Thank you to all [the contributors](https://github.com/thoughtbot/podcasts/contributors)!
+
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+License
+-------
+
+This application is Copyright © 2008-2014 thoughtbot, inc. It is free software,
+and may be redistributed under the terms specified in the MIT-LICENSE file.
