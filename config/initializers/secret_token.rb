@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Podcasts::Application.config.secret_key_base = '3a42d8cc2eb65eb805e3f648039d52c9fcb7356da281ed78ece11d81999be7da0c2672d3d8d7c9c62e6289f6dbf50c8a8f914dda4b1c45c47d79bfdcfc75ab43'
+Podcasts::Application.config.secret_key_base = ENV['RAILS_SECRET']
