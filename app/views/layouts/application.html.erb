@@ -8,54 +8,18 @@
     <%= yield :meta %>
     <title><%= yield(:page_title).presence || t('layouts.app_name') %></title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <script>
-      // Remove render-blocking JavaScripts
-      // https://developers.google.com/speed/docs/insights/BlockingJS
-      (function() {
-        function loadStylesheet(url) {
-          var stylesheet = document.createElement('link');
-          stylesheet.type = 'text/css';
-          stylesheet.rel = 'stylesheet';
-          stylesheet.href = url;
-          document.getElementsByTagName('head')[0].appendChild(stylesheet);
-        }
-
-        loadStylesheet('//cloud.typography.com/6716232/768182/css/fonts.css');
-        loadStylesheet('<%= asset_path 'application', type: :stylesheet %>');
-      })();
-    </script>
+    <%= stylesheet_link_tag :application, media: 'all' %>
+    <script type="text/javascript" src="//use.typekit.net/loq1vxq.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
   <body class="<%= yield :body_class %>">
-    <section id="container">
-      <%= yield(:header) %>
-      <%= yield %>
+    <section class="site-container">
+      <main class="container wrapper">
+        <%= yield(:header) %>
+        <%= yield %>
+      </main>
+      <%= render "partials/footer" %>
     </section>
-
-    <footer>
-      <section id="footer-container">
-        <section class="etc">
-          <p>
-            Don't just sit there.
-            <a href="http://learn.thoughtbot.com?utm_source=thoughtbot&utm_medium=podcasts&utm_campaign=footer">Learn something.</a>
-          </p>
-          <nav>
-            <ul>
-              <li>
-                <a href='http://twitter.com/thoughtbot' id='twitter'>
-                  twitter
-                </a>
-              </li>
-              <li>
-                <a href='http://tinyletter.com/thoughtbot' id='contact'>
-                  newsletter
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </section>
-      </section>
-    </footer>
-
-    <%= render 'analytics' %>
+    <%= render "analytics" %>
   </body>
 </html>

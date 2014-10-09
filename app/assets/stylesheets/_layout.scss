@@ -1,0 +1,48 @@
+html {
+  @include size(100% auto);
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: rgb(255, 255, 255);
+  border-top: 0.5em solid $base-accent-color;
+  font-family: $serif, serif;
+  font-size: 1rem;
+  line-height: 1.7rem;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  @include outer-container();
+  padding: 0 $gutter;
+
+  &.wrapper {
+    margin-top: 5em;
+  }
+}
+
+.row {
+  @include fill-parent();
+  float: left;
+}
+
+body.devise-sessions {
+  form {
+    display: none;
+  }
+
+  h2 {
+    display: none;
+  }
+}
+
+body.guest-info {
+  .title {
+    margin-top: 2em;
+  }
+
+  .post {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,42 @@
+iframe {
+  max-width: 100%;
+}
+
+iframe#tumblr_controls {
+  display: none;
+}
+
+.video-container {
+  height: 0;
+  margin: 1.7rem 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.listen audio {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+figure {
+  border-radius: 2px;
+  border: 1px solid #EEE;
+  margin-bottom: 1rem;
+}
+
+figcaption {
+  border-top: 1px dashed #EEE;
+  color: #888;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+}

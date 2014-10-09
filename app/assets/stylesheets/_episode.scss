@@ -1,0 +1,68 @@
+.episode-list {
+  @include fill-parent();
+  float: left;
+}
+
+.episode-item {
+  @extend .row;
+  margin-bottom: 3em;
+
+  .row {
+    margin-bottom: 2em;
+  }
+
+  .meta-wrapper {
+    @include span-columns(3 of 12);
+
+    @include media($mobile) {
+      @include fill-parent();
+      font-size: 0.8em;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+  }
+
+  .text-wrapper {
+    @include span-columns(9 of 12);
+
+    @include media($mobile) {
+      @include fill-parent();
+      text-align: center;
+    }
+  }
+}
+
+header.header-wrapper {
+  @include shift(3);
+  @include span-columns(9);
+  float: left;
+  width: 100%;
+  margin-bottom: 0.25em;
+
+  @include media($mobile) {
+    @include shift(0);
+    @include fill-parent();
+    text-align: center;
+  }
+}
+
+.episode-number {
+  a {
+    @extend %secondary-link-type;
+    text-decoration: none;
+  }
+}
+
+.episode-title {
+  a {
+    @extend %display-type;
+    @extend %display-link-type;
+  }
+}
+
+.episode-title {
+  a {
+    @extend %display-type;
+    @extend %display-link-type;
+  }
+}

@@ -1,0 +1,17 @@
+$red: rgb(197, 45, 47); // thoughtbot red
+$light-gray: rgb(150, 150, 150);
+$medium-gray: rgb(90, 90, 90);
+$slate-gray: rgb(57, 59, 68); // thoughtbot gray
+$dark-gray: rgb(51, 51, 51);
+
+$primary-brand-color: $red;
+$secondary-brand-color: $slate-gray;
+
+$base-font-color: $dark-gray;
+$base-accent-color: $primary-brand-color;
+$secondary-accent-color: $light-gray;
+
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-link-color, 10);
+
+$base-border-color: $light-gray;

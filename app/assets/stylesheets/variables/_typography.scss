@@ -1,0 +1,73 @@
+// Typeface
+$sans-serif: 'calluna-sans', Helvetica, sans-serif;
+$serif: 'freight-text-pro', Georgia, sans-serif;
+$subhead: 'freight-text-pro', Georgia, sans-serif;
+$monospace: monaco, monospace;
+
+$base-font-family: $serif;
+$header-font-family: $sans-serif;
+$base-font-size: 1em;
+$base-line-height: 1.5;
+
+// Type Weight
+$weights: (200 400 600 700);
+
+@each $weight in $weights {
+  %type-#{$weight} {
+    font-weight: #{$weight};
+  }
+}
+
+// Type Variables
+%display-type {
+  @extend %type-600;
+  font-family: $sans-serif;
+}
+
+%base-link-type {
+  color: $base-link-color;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+}
+
+%secondary-link-type {
+  color: $secondary-accent-color;
+
+  &:hover {
+    color: lighten($secondary-accent-color, 10);
+  }
+}
+
+%display-link-type {
+  color: $base-font-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $base-accent-color;
+  }
+}
+
+// SCSS
+a {
+  @extend %base-link-type;
+}
+
+ul.inline {
+  @include fill-parent();
+  float: left;
+
+  li {
+    float: left;
+    margin-right: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+em {
+  font-style: italic;
+}

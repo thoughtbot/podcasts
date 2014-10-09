@@ -1,0 +1,39 @@
+article.podcast-item {
+  @include fill-parent();
+  float: left;
+  margin-bottom: 4em;
+
+  @include media($mobile) {
+    text-align: center;
+  }
+
+  .logo-wrapper {
+    @include span-columns(3 of 12);
+  }
+
+  .text-wrapper {
+    @include span-columns(9 of 12);
+  }
+
+  .logo-wrapper, .text-wrapper {
+    @include media($mobile) {
+      @include fill-parent();
+    }
+  }
+
+  ul li {
+    a {
+      @extend %secondary-link-type;
+    }
+  }
+}
+
+.section-title {
+  @include fill-parent();
+  font-size: $base-font-size * 2;
+
+  a {
+    @extend %display-type;
+    @extend %display-link-type;
+  }
+}

@@ -5,50 +5,57 @@
   <%= render @episode.show %>
 <% end %>
 
-<section id='posts'>
-  <article class='post text'>
-    <h1 class='title'>
-      <%= link_to @episode.title, [@episode.show, @episode] %>
-    </h1>
-    <aside class='meta-info'>
-      <p class='episode-number'>
-        <%= link_to [@episode.show, @episode] do %>
-          Episode #<%= @episode.number %>
-        <% end %>
-      </p>
-      <p class='post-date'>
-        <%= l @episode.published_on %>
-      </p>
-      <p>
-        <%= distance_of_time_in_words @episode.duration.to_f %>
-      </p>
-    </aside>
+<header class="header-wrapper">
+  <h3 class='title'><%= @episode.title %></h3>
+</header>
 
-    <p><%= @episode.description %></p>
-
-    <div class="listen">
-      <audio preload="none" controls="controls">
-        <%= tag :source,
-          src: show_episode_path(@episode.show, @episode, format: :mp3),
-          type: 'audio/mpeg' %>
-      </audio>
-      <%= link_to show_episode_path(@episode.show, @episode, format: :mp3) do %>
-        Direct Download
+<section class="episode-item">
+  <aside class="meta-wrapper">
+    <p class='episode-number'>
+      <%= link_to [@episode.show, @episode] do %>
+        Episode #<%= @episode.number %>
       <% end %>
-      (<%= number_to_human_size @episode.file_size, precision: 2 %>)
+    </p>
+    <p class='post-date'>
+      <%= l @episode.published_on %>
+    </p>
+    <p>
+      <%= distance_of_time_in_words @episode.duration.to_f %>
+    </p>
+  </aside>
+
+  <section class="text-wrapper">
+    <div class="row">
+      <p><%= @episode.description %></p>
     </div>
 
-    <% unless @episode.notes.blank? %>
-      <h3>Notes &amp; Links</h3>
-      <%== format_podcast_notes @episode.notes %>
-    <% end %>
+    <div class="row">
+      <div class="listen">
+        <audio preload="none" controls="controls">
+          <%= tag :source,
+            src: show_episode_path(@episode.show, @episode, format: :mp3),
+            type: 'audio/mpeg' %>
+        </audio>
+        <%= link_to show_episode_path(@episode.show, @episode, format: :mp3) do %>
+          Direct Download
+        <% end %>
+        (<%= number_to_human_size @episode.file_size, precision: 2 %>)
+      </div>
+    </div>
 
-    <section id="podcast-questions">
-      <h3>To have your questions answered on the air</h3>
+    <div class="row">
+      <% unless @episode.notes.blank? %>
+        <h4>Notes &amp; Links</h4>
+        <%== format_podcast_notes @episode.notes %>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <h4>To have your questions answered on the air</h4>
       <p>
         Email your questions to <%= mail_to @episode.show.email %> or Tweet to
         us <a href="http://twitter.com/thoughtbot">@thoughtbot</a>.
       </p>
-    </section>
-  </article>
+    </div>
+  </section>
 </section>
