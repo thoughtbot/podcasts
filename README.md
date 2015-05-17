@@ -1,7 +1,7 @@
 thoughtbot Podcasts
 ===================
 
-Application for publishing our podcasts.
+This application was once used for publishing our podcasts. We now make use of [Simplecast](http://simplecast.fm) for the same.
 
 Setup
 -----
