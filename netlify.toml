@@ -6,25 +6,25 @@
 
 [[redirects]]
   from = "/giantrobots.xml"
-  to = "http://simplecast.fm/podcasts/271/rss"
+  to = "https://feeds.simplecast.com/KARThxOK"
   status = 301
   force = true
 
 [[redirects]]
   from = "/buildphase.xml"
-  to = "http://simplecast.fm/podcasts/272/rss"
+  to = "https://feeds.simplecast.com/Negbvh_r"
   status = 301
   force = true
 
 [[redirects]]
   from = "/bikeshed.xml"
-  to = "http://simplecast.fm/podcasts/282/rss"
+  to = "https://feeds.simplecast.com/ky3kewHN"
   status = 301
   force = true
 
 [[redirects]]
   from = "/reboot.xml"
-  to = "http://simplecast.fm/podcasts/287/rss"
+  to = "https://feeds.simplecast.com/SAkbzShV"
   status = 301
   force = true
 
