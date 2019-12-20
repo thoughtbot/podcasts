@@ -1,0 +1,41 @@
+[[redirects]]
+  from = "/"
+  to = "https://thoughtbot.com/podcasts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/giantrobots.xml"
+  to = "http://simplecast.fm/podcasts/271/rss"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buildphase.xml"
+  to = "http://simplecast.fm/podcasts/272/rss"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bikeshed.xml"
+  to = "http://simplecast.fm/podcasts/282/rss"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reboot.xml"
+  to = "http://simplecast.fm/podcasts/287/rss"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:show/:episode"
+  to = "https://:show.fm/:episode"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:show"
+  to = "https://:show.fm/"
+  status = 301
+  force = true
