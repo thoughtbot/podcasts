@@ -1,16 +1,2 @@
 !.keep
 *.DS_Store
-*.swo
-*.swp
-.bundle
-.env
-.foreman
-.sass-cache/
-coverage/*
-db/*.sqlite3
-log/*
-public/system
-rerun.txt
-tags
-tmp/*
-tmp/**/*
